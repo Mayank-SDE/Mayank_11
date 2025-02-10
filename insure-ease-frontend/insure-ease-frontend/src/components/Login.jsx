@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaGoogle, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -54,9 +54,6 @@ const Login = () => {
             </button>
             <button className="btn btn-outline-dark w-100 mb-2">
               <FaGithub /> Login with GitHub
-            </button>
-            <button className="btn btn-outline-primary w-100">
-              <FaLinkedin /> Login with LinkedIn
             </button>
           </div>
 

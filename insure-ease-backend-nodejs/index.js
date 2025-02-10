@@ -3,7 +3,7 @@ const cors = require('cors');
 const passport = require('passport');
 require('dotenv').config();
 require('./config/db');           // Connect to MySQL
-// require('./config/passport');     // Passport OAuth configuration
+require('./config/passport');     // Passport OAuth configuration
 
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(passport.initialize());
 
 // Routes
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
 // Server Start
