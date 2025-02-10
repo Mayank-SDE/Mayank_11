@@ -14,20 +14,20 @@ const Carousel = () => {
       </div>
 
       <div className="carousel-inner">
-        {[{ img: healthImg, title: 'Health Insurance', desc: 'Comprehensive health coverage to keep you and your family safe.' },
+        {[
+          { img: healthImg, title: 'Health Insurance', desc: 'Comprehensive health coverage to keep you and your family safe.' },
           { img: lifeImg, title: 'Life Insurance', desc: 'Secure your loved ones\' future with our trusted life insurance plans.' },
           { img: carImg, title: 'Car Insurance', desc: 'Drive with confidence knowing you\'re covered with the best car insurance.' },
-          { img: houseImg, title: 'Property Insurance', desc: 'Protect your valuable assets with our comprehensive property insurance.' }]
-          .map((item, index) => (
-            <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-              <img src={item.img} className="d-block w-100 rounded" alt={item.title} style={{ maxHeight: '400px', objectFit: 'cover' }} />
-              <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded shadow">
-                <h5>{item.title}</h5>
-                <p>{item.desc}</p>
-              </div>
+          { img: houseImg, title: 'Property Insurance', desc: 'Protect your valuable assets with our comprehensive property insurance.' }
+        ].map((item, index) => (
+          <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
+            <img src={item.img} className="d-block w-100 rounded" alt={item.title} style={{ maxHeight: '400px', objectFit: 'cover' }} />
+            <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded shadow">
+              <h5>{item.title}</h5>
+              <p>{item.desc}</p>
             </div>
-          ))
-        }
+          </div>
+        ))}
       </div>
 
       <button className="carousel-control-prev" type="button" data-bs-target="#insuranceCarousel" data-bs-slide="prev">

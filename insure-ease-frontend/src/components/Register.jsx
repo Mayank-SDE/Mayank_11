@@ -1,5 +1,7 @@
 import { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Register = () => {
@@ -30,11 +32,42 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      toast.error("Passwords do not match!");
+      return;
+    }
+
+    if (formData.securityAnswer.trim().split(' ').length > 1) {
+      toast.error("Security answer must be one word.");
+      return;
+    }
+
     console.log('Form Data Submitted:', formData);
+    toast.success("Registration Successful!");
+
+    // Reset form after successful submission
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      phone: '',
+      address: '',
+      dob: '',
+      gender: '',
+      securityQuestion: '',
+      securityAnswer: '',
+      termsAgreed: false,
+    });
+
+    setTimeout(() => navigate('/login'), 2000); // Redirect to login after 2 seconds
   };
 
   return (
     <div className="container mt-5">
+      <ToastContainer />
       <h2 className="text-center mb-4">Register</h2>
       <form onSubmit={handleSubmit} className="shadow p-4 rounded bg-light">
         <div className="row mb-3">

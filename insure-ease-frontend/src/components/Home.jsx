@@ -15,7 +15,9 @@ const Home = () => {
 
         <div className="text-center mt-5">
           <h2 className="mb-3">Why Choose Us?</h2>
-          <p className="lead">We offer the best insurance policies tailored to your needs with easy management and reliable customer support.</p>
+          <p className="lead">
+            We offer the best insurance policies tailored to your needs with easy management and reliable customer support.
+          </p>
         </div>
       </div>
     </div>
