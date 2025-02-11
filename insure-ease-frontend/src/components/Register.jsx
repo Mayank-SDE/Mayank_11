@@ -46,7 +46,6 @@ const Register = () => {
     console.log('Form Data Submitted:', formData);
     toast.success("Registration Successful!");
 
-    // Reset form after successful submission
     setFormData({
       firstName: '',
       lastName: '',
@@ -62,7 +61,7 @@ const Register = () => {
       termsAgreed: false,
     });
 
-    setTimeout(() => navigate('/login'), 2000); // Redirect to login after 2 seconds
+    setTimeout(() => navigate('/login'), 2000);
   };
 
   return (
@@ -115,15 +114,15 @@ const Register = () => {
         <div className="mb-3">
           <label className="form-label d-block">Gender</label>
           <div className="form-check form-check-inline">
-            <input className="form-check-input" type="radio" name="gender" id="male" value="Male" onChange={handleChange} required />
+            <input className="form-check-input" type="radio" name="gender" id="male" value="Male" checked={formData.gender === 'Male'} onChange={handleChange} required />
             <label className="form-check-label" htmlFor="male">Male</label>
           </div>
           <div className="form-check form-check-inline">
-            <input className="form-check-input" type="radio" name="gender" id="female" value="Female" onChange={handleChange} required />
+            <input className="form-check-input" type="radio" name="gender" id="female" value="Female" checked={formData.gender === 'Female'} onChange={handleChange} required />
             <label className="form-check-label" htmlFor="female">Female</label>
           </div>
           <div className="form-check form-check-inline">
-            <input className="form-check-input" type="radio" name="gender" id="other" value="Other" onChange={handleChange} required />
+            <input className="form-check-input" type="radio" name="gender" id="other" value="Other" checked={formData.gender === 'Other'} onChange={handleChange} required />
             <label className="form-check-label" htmlFor="other">Other</label>
           </div>
         </div>

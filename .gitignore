@@ -1,2 +1,10 @@
 insure-ease-backend-nodejs/.env
 **/.env
+/.metadata/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
